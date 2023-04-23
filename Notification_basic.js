@@ -1,9 +1,11 @@
-const button = document.querySelector("button")
+const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
-    Notification.requestPermission().then(perm => {
-        if (perm === "granted") {
-            new Notification("Example Notification");
-        }
-    })
-})
+  Notification.requestPermission().then((perm) => {
+    if (perm === "granted") {
+      setTimeout(function () {
+        new Notification("Example Notification");
+      }, 1000);
+    }
+  });
+});
